@@ -1,0 +1,37 @@
+
+<form action="" [formGroup]="filterForm">
+	<ng-select 
+		[multiple]="false"
+		[items]="types"
+		[clearable] = "false"
+		placeholder="Choose type"
+		formControlName="categories">
+	</ng-select>
+	<button [disabled]="!selectedType" (click)="roll()">Randomize</button>
+</form>
+
+<div class="cards">
+	<div class="flex flex__column flex__grow-1" [ngClass]="{'winner': winner == 1 }">
+		<div class="title title__50">
+			Player 1 Score :  {{firstPlayer.score}}
+		</div>
+
+		<app-people-card *ngIf="(firstPlayer && firstPlayer.personEntries) && this.selectedType == 1 " 
+		[person]="firstPlayer.personEntries"></app-people-card>
+
+		<app-vehicle-card  *ngIf="(firstPlayer && firstPlayer.vehicleEntries) && this.selectedType == 2 "
+		[vehicle] = "firstPlayer.vehicleEntries"></app-vehicle-card>
+	</div>
+
+	<div class="flex flex__column flex__grow-1"  [ngClass]="{'winner': winner == 2 }">
+		<div class="title title__50">
+			Player 2 Score : {{secondPlayer.score}}
+		</div>
+
+		<app-people-card *ngIf="(secondPlayer && secondPlayer.personEntries) && this.selectedType == 1" 
+			[person]="secondPlayer.personEntries"></app-people-card>
+
+		<app-vehicle-card  *ngIf="(secondPlayer && secondPlayer.vehicleEntries) && this.selectedType == 2 "
+			[vehicle] = "secondPlayer.vehicleEntries"></app-vehicle-card>
+	</div>
+</div>

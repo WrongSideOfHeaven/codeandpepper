@@ -1,11 +1,24 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ExpectedConditions, $$ } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
-  }
+	navigateTo() {
+		return browser.get(browser.baseUrl) as Promise<any>;
+	}
+	
+	getTitlesText() {
+		return element(by.className('title')).isPresent() as Promise<boolean>;
+	}
+	getCategorySelect() {
+		return element(by.className('ng-select'));
+	}
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
-  }
+	getFirstSelectPosition() { 
+		return element(by.css('div.ng-option:nth-child(1)')).getText() as Promise<string>;
+	}
+	getSecondSelectPosition() { 
+		return element(by.css('div.ng-option:nth-child(2)')).getText() as Promise<string>;
+	}
+	getButton() { 
+		return element(by.css('button')).isPresent() as Promise<boolean>;
+	}
 }

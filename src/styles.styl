@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'app/styles/select.styl';
+@import 'app/styles/texts.styl';
+darkColor = #181C63 
+cyanColor = #28EEC7
+body
+	height 100vh
+
+button
+	font-size: 16px
+	line-height: 22px
+	padding: 10px 40px
+	border-radius: 20px
+	cursor: pointer
+	outline: none
+	background-color: cyanColor
+	border: 2px solid cyanColor
+	margin: 150px auto 0 auto
+.flex
+	display flex
+	&__grow-1
+		flex: 1
+	&__column
+		flex-direction: column
+		align-items: center
+
+
+.ng-select .ng-option:nth-child(1) .ng-option-label
+	color: red !important

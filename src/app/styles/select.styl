@@ -1,0 +1,56 @@
+ng-select
+	outline: none !important
+	*
+		outline: none !important
+.ng-arrow-wrapper .ng-arrow
+	border-color: #28eec7 transparent transparent !important;
+	border-width: 8px 5px 2.5px !important;
+	border-style: solid
+	
+.ng-select-opened > .ng-select-container .ng-arrow
+	border-width: 0 5px 8px !important;
+	border-style: solid
+	border-color: transparent transparent #28eec7 !important;
+.ng-arrow-wrapper
+	padding-bottom: 5px
+
+.ng-select
+	.ng-has-value
+		.ng-placeholder
+			display: none
+	.ng-option 
+		min-height 50px
+		padding: 0 16px !important
+		display flex !important
+		align-items: center
+		justify-content: flex-start
+		white-space: pre-wrap !important;
+		span
+			font-size: 16px 
+			line-height: 22px
+			color: #181C63
+			font-weight: 500 !important
+			max-width: 100%
+			text-align: start;
+
+		&.ng-option-marked, 
+		&.ng-option-selected
+			background-color: #C2FAEF !important
+	.ng-dropdown-panel
+		width: auto
+		min-width: 300px
+		max-width: 100%
+		background-color: #FFF
+		border: none 
+		border-radius: 8px;
+		box-shadow: -1px 4px 6px 0px rgba(0,0,0,0.09);
+		margin-top: 9px !important;
+		.scroll-host
+			border-radius: 8px
+			&::-webkit-scrollbar
+				display: none;
+	.ng-input
+		padding-bottom: 0 !important
+		padding-top: 0 !important
+		input
+			padding: 0
