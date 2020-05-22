@@ -1,4 +1,4 @@
-import { browser, by, element, ExpectedConditions, $$ } from 'protractor';
+import { browser, by, element, ExpectedConditions, $$, ElementArrayFinder } from 'protractor';
 
 export class AppPage {
 	navigateTo() {
@@ -13,12 +13,18 @@ export class AppPage {
 	}
 
 	getFirstSelectPosition() { 
-		return element(by.css('div.ng-option:nth-child(1)')).getText() as Promise<string>;
+		return element(by.css('div.ng-option:nth-child(1)'));
 	}
 	getSecondSelectPosition() { 
-		return element(by.css('div.ng-option:nth-child(2)')).getText() as Promise<string>;
+		return element(by.css('div.ng-option:nth-child(2)'));
 	}
 	getButton() { 
-		return element(by.css('button')).isPresent() as Promise<boolean>;
+		return element(by.css('button'));
+	}
+	async getPersonCards() { 
+		return element.all(by.css('app-people-card')) as ElementArrayFinder;
+	}
+	async getVehicleCards() { 
+		return element.all(by.css('app-vehicle-card')) as ElementArrayFinder;
 	}
 }

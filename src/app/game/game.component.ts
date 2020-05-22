@@ -18,7 +18,7 @@ export class GameComponent implements OnInit {
 	vehiclesCounter = 0;
 	firstPlayer: Player = <Player>{};
 	secondPlayer: Player = <Player>{};
-	winner = 0
+	winner = 0;
 	types: SelectValue[] = categories;
 	selectedType = 0;
 	filterForm: FormGroup;
@@ -40,8 +40,8 @@ export class GameComponent implements OnInit {
 	}
 	
 	registerFormValueChanges() { 
-		this.filterForm.get('categories').valueChanges.subscribe((category: SelectValue) =>{ 
-			this.selectedType = category.value
+		this.filterForm.get('categories').valueChanges.subscribe((category: SelectValue) => { 
+			this.selectedType = category.value;
 		})
 	}
 	
@@ -78,8 +78,8 @@ export class GameComponent implements OnInit {
 	}
 	
 	setWinner(firstResult: string, secondResult: string) { 
-		const firstResultNumber = isNaN(parseInt(firstResult)) ? 0 : parseInt(firstResult)
-		const secondResultNumber = isNaN(parseInt(secondResult)) ? 0 : parseInt(secondResult)
+		const firstResultNumber = isNaN(parseInt(firstResult)) ? 0 : parseInt(firstResult);
+		const secondResultNumber = isNaN(parseInt(secondResult)) ? 0 : parseInt(secondResult);
 		
 		if(firstResultNumber > secondResultNumber) {
 			this.winner = 1;
@@ -115,11 +115,11 @@ export class GameComponent implements OnInit {
 	}
 	
 	getMultipleSpecies(urls: string[]) { 
-		return forkJoin(this.prepareMultipleSpeciesRequests(urls))
+		return forkJoin(this.prepareMultipleSpeciesRequests(urls));
 	}
 	
 	prepareMultipleSpeciesRequests(urls: string[]) { 
-		return urls.map(url => this.getSingleSpecies(url))
+		return urls.map(url => this.getSingleSpecies(url));
 	}
 	
 	getSingleSpecies(url: string) { 

@@ -20,16 +20,14 @@ export class SwapiService {
 	}
 
 	fetchVehicleById(vehicleId: number) {
-		return this.http.get<VehicleEntry>(`${this.URL}vehicles/${vehicleId}`)
+		return this.http.get<VehicleEntry>(`${this.URL}vehicles/${vehicleId}`);
 	}
 
 	fetchPersonById(personId: number) {
-		return this.http.get<PersonEntry>(`${this.URL}people/${personId}`)
+		return this.http.get<PersonEntry>(`${this.URL}people/${personId}`);
 	}
 
 	fetchSpeciesByUrl(url: string) {
-		
 		return this.http.get(url);
-
 	}
 }

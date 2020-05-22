@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, ExpectedConditions } from 'protractor';
 
 describe('workspace-project App', () => {
 	let page: AppPage;
@@ -21,18 +21,38 @@ describe('workspace-project App', () => {
 	it('should display category select first option', () => {
 		page.navigateTo();
 		page.getCategorySelect().click();
-		expect(page.getFirstSelectPosition()).toEqual('Persons');
+		expect(page.getFirstSelectPosition().getText()).toEqual('Persons');
 	});
 
 	it('should display button', () => {
 		page.navigateTo();
-		expect(page.getButton()).toBe(true);
+		expect(page.getButton().isPresent()).toBe(true);
 	});
 
 	it('should display category select second option', () => {
 		page.navigateTo();
 		page.getCategorySelect().click();
-		expect(page.getSecondSelectPosition()).toEqual('Vehicles');
+		expect(page.getSecondSelectPosition().getText()).toEqual('Vehicles');
+	});
+
+	it('should display persons card', async () => {
+		page.navigateTo();
+		page.getCategorySelect().click();
+		page.getFirstSelectPosition().click();
+		await page.getButton().click();
+
+		let searchText = await page.getPersonCards().then(res => res.length);
+		expect( searchText ).toEqual(2)
+	});
+
+	it('should display vehicles card', async () => {
+		page.navigateTo();
+		page.getCategorySelect().click();
+		page.getSecondSelectPosition().click();
+		await page.getButton().click();
+
+		let searchText = await page.getVehicleCards().then(res =>res.length );
+		expect( searchText ).toEqual(2);
 	});
 	
 	afterEach(async () => {
