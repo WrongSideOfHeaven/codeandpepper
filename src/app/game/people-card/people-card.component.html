@@ -1,16 +1,18 @@
-
 <mat-card class="card">
 	<mat-card-header>
-		<mat-card-title>Name : {{person.name}}</mat-card-title>
-		
-		<mat-card-subtitle>Species : <span *ngFor="let species of person.species" >
-			{{species.name}}
-		</span> </mat-card-subtitle>
+		<mat-card-title>Name : {{ person.name }}</mat-card-title>
+
+		<mat-card-subtitle
+			>Species :
+			<span *ngFor="let species of person.species">
+				{{ species.name }}
+			</span>
+		</mat-card-subtitle>
 	</mat-card-header>
-	
+
 	<mat-card-content>
 		<p>
-			<span>Mass : {{person.mass}}</span>
+			<span>Mass : {{ person.mass }}</span>
 		</p>
 	</mat-card-content>
-</mat-card> 
+</mat-card>

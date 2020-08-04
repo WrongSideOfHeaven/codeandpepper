@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "Code-Pepper"
+  "defaultProject": "Code-Pepper",
+  "cli": {
+    "analytics": "cc5b9027-ea4b-4e3f-90db-6aa931ae9a22"
+  }
 }

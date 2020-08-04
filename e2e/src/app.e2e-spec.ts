@@ -1,13 +1,13 @@
+import { browser, logging } from 'protractor';
 import { AppPage } from './app.po';
-import { browser, logging, ExpectedConditions } from 'protractor';
 
 describe('workspace-project App', () => {
 	let page: AppPage;
-	
+
 	beforeEach(() => {
 		page = new AppPage();
 	});
-	
+
 	it('should display Score titles', () => {
 		page.navigateTo();
 		expect(page.getTitlesText());
@@ -41,8 +41,8 @@ describe('workspace-project App', () => {
 		page.getFirstSelectPosition().click();
 		await page.getButton().click();
 
-		let searchText = await page.getPersonCards().then(res => res.length);
-		expect( searchText ).toEqual(2)
+		const searchText = await page.getPersonCards().then((res) => res.length);
+		expect(searchText).toEqual(2);
 	});
 
 	it('should display vehicles card', async () => {
@@ -51,15 +51,17 @@ describe('workspace-project App', () => {
 		page.getSecondSelectPosition().click();
 		await page.getButton().click();
 
-		let searchText = await page.getVehicleCards().then(res =>res.length );
-		expect( searchText ).toEqual(2);
+		const searchText = await page.getVehicleCards().then((res) => res.length);
+		expect(searchText).toEqual(2);
 	});
-	
+
 	afterEach(async () => {
 		// Assert that there are no errors emitted from the browser
 		const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-		expect(logs).not.toContain(jasmine.objectContaining({
-			level: logging.Level.SEVERE,
-		} as logging.Entry));
+		expect(logs).not.toContain(
+			jasmine.objectContaining({
+				level: logging.Level.SEVERE
+			} as logging.Entry)
+		);
 	});
 });

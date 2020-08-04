@@ -4,7 +4,7 @@ export class AppPage {
 	navigateTo() {
 		return browser.get(browser.baseUrl) as Promise<any>;
 	}
-	
+
 	getTitlesText() {
 		return element(by.className('title')).isPresent() as Promise<boolean>;
 	}
@@ -12,23 +12,23 @@ export class AppPage {
 		return element(by.className('ng-select'));
 	}
 
-	getFirstSelectPosition() { 
+	getFirstSelectPosition() {
 		return element(by.css('div.ng-option:nth-child(1)'));
 	}
 
-	getSecondSelectPosition() { 
+	getSecondSelectPosition() {
 		return element(by.css('div.ng-option:nth-child(2)'));
 	}
 
-	getButton() { 
+	getButton() {
 		return element(by.css('button'));
 	}
 
-	async getPersonCards() { 
+	async getPersonCards() {
 		return element.all(by.css('app-people-card')) as ElementArrayFinder;
 	}
-	
-	async getVehicleCards() { 
+
+	async getVehicleCards() {
 		return element.all(by.css('app-vehicle-card')) as ElementArrayFinder;
 	}
 }

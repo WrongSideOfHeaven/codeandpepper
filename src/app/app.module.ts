@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameComponent } from './game/game.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { SwapiService } from './_services/swapi.service';
-import { MatCardModule } from '@angular/material/card';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { PeopleCardComponent } from './game/people-card/people-card.component';
 import { VehicleCardComponent } from './game/vehicle-card/vehicle-card.component';
+import { SwapiService } from './_services/swapi.service';
 
 @NgModule({
 	declarations: [
@@ -32,4 +32,4 @@ import { VehicleCardComponent } from './game/vehicle-card/vehicle-card.component
 	providers: [SwapiService],
 	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

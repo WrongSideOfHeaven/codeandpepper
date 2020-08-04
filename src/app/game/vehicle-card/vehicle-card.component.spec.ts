@@ -7,19 +7,19 @@ describe('VehicleCardComponent', () => {
   let fixture: ComponentFixture<VehicleCardComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ VehicleCardComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+		declarations: [ VehicleCardComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VehicleCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(VehicleCardComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });
